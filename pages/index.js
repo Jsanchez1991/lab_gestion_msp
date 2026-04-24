@@ -29,7 +29,7 @@ const STATS = [
   { label: 'Críticos',   estado: 'critico',   color: 'amber',      hint: 'Valores críticos' },
 ];
 
-export default function Home() {
+export default function Home({ session }) {
   const [muestras, setMuestras] = useState([]);
   const [tab, setTab] = useState('dashboard');
   const [loading, setLoading] = useState(true);
@@ -101,6 +101,18 @@ export default function Home() {
           </div>
         </div>
         <div className="header-actions">
+          <div className="user-info" style={{ 
+            fontSize: '11px', textAlign: 'right', display: 'flex', flexDirection: 'column',
+            justifyContent: 'center', opacity: 0.8
+          }}>
+            <span>{session?.user?.email}</span>
+            <button 
+              onClick={() => supabase.auth.signOut()}
+              style={{ background: 'none', border: 'none', color: '#5BC8F5', cursor: 'pointer', padding: 0, textAlign: 'right', fontSize: '10px' }}
+            >
+              Cerrar sesión
+            </button>
+          </div>
           <button className="btn btn-primary btn-sm" onClick={() => setShowNuevo(true)}>
             + Nuevo Registro
           </button>

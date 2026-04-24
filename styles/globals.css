@@ -305,6 +305,38 @@ tbody tr:last-child td { border-bottom: none; }
   box-shadow: 0 0 0 3px var(--blue-50);
 }
 .form-field textarea { resize: vertical; font-family: inherit; }
+.modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 24px; }
+
+/* Login Page Styles */
+.login-page {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-600) 100%);
+  padding: 20px;
+}
+.login-card {
+  background: var(--white);
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%; max-width: 400px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  text-align: center;
+}
+.login-logo {
+  width: 64px; height: 64px; background: var(--blue-50);
+  border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  font-weight: 700; color: var(--blue-800); font-size: 24px; margin: 0 auto 20px;
+}
+.login-title { font-size: 24px; font-weight: 600; color: var(--blue-900); margin-bottom: 8px; }
+.login-sub { font-size: 14px; color: var(--gray-600); margin-bottom: 30px; }
+.login-footer { margin-top: 30px; font-size: 12px; color: var(--gray-400); }
+
+/* Header adjustments */
+.header-sub { font-size: 11px; opacity: 0.7; }
+.nav-count { 
+  background: rgba(255,255,255,0.2); border-radius: 10px; padding: 1px 6px; 
+  font-size: 10px; margin-left: 6px; 
+}
 .form-actions {
   display: flex; gap: 10px; justify-content: flex-end;
   padding-top: 8px;
