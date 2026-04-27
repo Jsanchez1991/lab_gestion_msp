@@ -62,7 +62,6 @@ export default function MantenimientoTab() {
           <h2 className="section-title">Mantenimiento preventivo · RAE1</h2>
           <span className="section-sub">Registro diario de control de equipos</span>
         </div>
-        </div>
         <div className="filters-bar">
           <div className="form-field date-field">
             <label>Fecha</label>
