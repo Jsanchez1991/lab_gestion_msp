@@ -630,9 +630,51 @@ tbody tr:last-child td { border-bottom: none; }
 .badge-amber { background: var(--amber-50); color: var(--amber-800); }
 
 /* ============ RESPONSIVE ============ */
+@media (max-width: 900px) {
+  .institutional-banner { grid-template-columns: 1fr 1fr; }
+}
+
 @media (max-width: 640px) {
-  .main { padding: 20px 14px 40px; }
-  .header-actions .btn-ghost { display: none; }
-  .detalle-grid { grid-template-columns: 1fr; }
+  .main { padding: 16px 12px 40px; }
+  
+  .app-header { padding: 0 12px; }
+  .header-brand h1 { font-size: 14px; }
+  .header-sub { display: none; }
+  
+  .user-info span { display: none; } /* Hide email on small screens */
+  .header-actions { gap: 6px; }
+  .header-actions .btn { padding: 6px 10px; font-size: 11px; }
+
+  .institutional-banner { 
+    grid-template-columns: 1fr; 
+    gap: 12px;
+    padding: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .stats-grid { 
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
+    gap: 10px;
+  }
+  .stat-card { padding: 14px; }
+  .stat-value { font-size: 24px; }
+
+  .section-head { flex-direction: column; align-items: flex-start; gap: 4px; }
+  
+  /* Table optimization */
+  th:nth-child(3), td:nth-child(3),
   th:nth-child(4), td:nth-child(4) { display: none; }
+  
+  .modal-backdrop { padding: 20px 10px; }
+  .modal-header { padding: 14px 18px; }
+  .modal-body { padding: 16px 18px; }
+  
+  .form-row { gap: 10px; }
+  .form-field { min-width: 100%; }
+}
+
+@media (max-width: 400px) {
+  .header-brand .logo { width: 30px; height: 30px; font-size: 11px; }
+  .header-brand h1 { font-size: 13px; }
+  .btn-sm { padding: 4px 8px; font-size: 10px; }
 }
