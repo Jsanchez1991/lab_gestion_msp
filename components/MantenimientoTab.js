@@ -59,7 +59,7 @@ export default function MantenimientoTab() {
     <section className="mantenimiento-section">
       <div className="section-head mantenimiento-head">
         <div>
-          <h2 className="section-title">Mantenimiento preventivo · RAE1</h2>
+          <h2 className="section-title">Mantenimiento preventivo - RAE1</h2>
           <span className="section-sub">Registro diario de control de equipos</span>
         </div>
         <div className="filters-bar">
@@ -77,7 +77,7 @@ export default function MantenimientoTab() {
 
       {error && <div className="error-banner">{error}</div>}
 
-      <div className="stats-grid" style={{ marginBottom: 20 }}>
+      <div className="stats-grid m-b-20">
         <div className="stat-card stat-blue">
           <div className="stat-label">Equipos</div>
           <div className="stat-value">{equipos.length}</div>
@@ -97,14 +97,16 @@ export default function MantenimientoTab() {
       </div>
 
       {loading ? (
-        <div className="table-wrap"><div style={{ padding: 40, textAlign: 'center', color: 'var(--gray-400)' }}>Cargando…</div></div>
+        <div className="table-wrap">
+          <div style={{ padding: 40, textAlign: 'center', color: 'var(--gray-400)' }}>Cargando...</div>
+        </div>
       ) : (
         <div className="table-wrap">
           <table className="mantenimiento-table">
             <thead>
               <tr>
                 <th>Equipo</th>
-                <th>Código/Serie</th>
+                <th>Codigo/Serie</th>
                 <th style={{ textAlign: 'center' }}>Operativo</th>
                 <th>Responsable</th>
                 <th style={{ textAlign: 'center' }}>Mantenimiento</th>
@@ -117,14 +119,14 @@ export default function MantenimientoTab() {
                 return (
                   <tr key={eq.id}>
                     <td className="cell-primary">{eq.nombre}</td>
-                    <td className="mono">{eq.codigo_serie || '—'}</td>
+                    <td className="mono">{eq.codigo_serie || '-'}</td>
                     <td style={{ textAlign: 'center' }}>
                       <button
                         className={`toggle-btn ${r?.equipo_operativo !== false ? 'on' : 'off'}`}
                         onClick={() => actualizar(eq.id, { equipo_operativo: !(r?.equipo_operativo !== false) })}
                         disabled={saving}
                       >
-                        {r?.equipo_operativo !== false ? 'SÍ' : 'NO'}
+                        {r?.equipo_operativo !== false ? 'SI' : 'NO'}
                       </button>
                     </td>
                     <td>
@@ -145,7 +147,7 @@ export default function MantenimientoTab() {
                         onClick={() => actualizar(eq.id, { mantenimiento_realizado: !r?.mantenimiento_realizado })}
                         disabled={saving}
                       >
-                        {r?.mantenimiento_realizado ? 'SÍ' : 'NO'}
+                        {r?.mantenimiento_realizado ? 'SI' : 'NO'}
                       </button>
                     </td>
                     <td>
