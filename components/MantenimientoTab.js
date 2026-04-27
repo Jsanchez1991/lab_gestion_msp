@@ -56,18 +56,19 @@ export default function MantenimientoTab() {
   const operativos = registros.filter((r) => r.equipo_operativo).length;
 
   return (
-    <section>
-      <div className="section-head" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
+    <section className="mantenimiento-section">
+      <div className="section-head mantenimiento-head">
         <div>
           <h2 className="section-title">Mantenimiento preventivo · RAE1</h2>
           <span className="section-sub">Registro diario de control de equipos</span>
         </div>
-        <div style={{ display: 'flex', gap: 10, alignItems: 'flex-end' }}>
-          <div className="form-field" style={{ maxWidth: 140 }}>
+        </div>
+        <div className="filters-bar">
+          <div className="form-field date-field">
             <label>Fecha</label>
             <input type="date" value={fecha} onChange={(e) => setFecha(e.target.value)} />
           </div>
-          <div className="form-field" style={{ maxWidth: 220 }}>
+          <div className="form-field resp-field">
             <label>Responsable por defecto</label>
             <input value={responsable} onChange={(e) => setResponsable(e.target.value)}
               placeholder="Ej: LCDA GIANELLE HERNANDEZ" />
@@ -100,7 +101,7 @@ export default function MantenimientoTab() {
         <div className="table-wrap"><div style={{ padding: 40, textAlign: 'center', color: 'var(--gray-400)' }}>Cargando…</div></div>
       ) : (
         <div className="table-wrap">
-          <table>
+          <table className="mantenimiento-table">
             <thead>
               <tr>
                 <th>Equipo</th>
