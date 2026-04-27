@@ -637,11 +637,29 @@ tbody tr:last-child td { border-bottom: none; }
 @media (max-width: 640px) {
   .main { padding: 16px 12px 40px; }
   
-  .app-header { padding: 0 12px; }
+  .app-header { 
+    padding: 10px 12px; 
+    height: auto; 
+    flex-wrap: wrap; 
+    gap: 12px; 
+    justify-content: space-between;
+  }
   .header-brand h1 { font-size: 14px; }
   .header-sub { display: none; }
   
-  .user-info span { display: none; } /* Hide email on small screens */
+  .user-info { 
+    order: 3; 
+    width: 100%; 
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 8px;
+    margin-top: 4px;
+    opacity: 0.9;
+  }
+  .user-info span { display: block !important; font-size: 10px; opacity: 0.7; }
   .header-actions { gap: 6px; }
   .header-actions .btn { padding: 6px 10px; font-size: 11px; }
 
@@ -664,6 +682,10 @@ tbody tr:last-child td { border-bottom: none; }
   /* Table optimization */
   th:nth-child(3), td:nth-child(3),
   th:nth-child(4), td:nth-child(4) { display: none; }
+
+  /* Specific override for Mantenimiento to show Operativo (col 3) */
+  .mantenimiento-table th:nth-child(3), 
+  .mantenimiento-table td:nth-child(3) { display: table-cell; }
   
   .modal-backdrop { padding: 20px 10px; }
   .modal-header { padding: 14px 18px; }
